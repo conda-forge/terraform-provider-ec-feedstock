@@ -1,6 +1,6 @@
 {% set provider = "ec" %}
 {% set goname = "github.com/elastic/terraform-provider-"+provider.lower() %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -11,8 +11,8 @@ package:
   version: {{ version }}
 
 source:
-    url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: 0c19f8d2567e663991b351c8333d498ba28643c3c09ceadd107093b4e1825c21
+  url: https://{{ goname }}/archive/v{{ version }}.tar.gz
+  sha256: 198b0a53962b4363d7734dd4bcb3d637b4996063372d7adbe19fdb09014a0ad5
 
 build:
   number: 0
@@ -26,7 +26,7 @@ requirements:
     - terraform 0.13
 
 test:
-  requires:         # [win]
+  requires:   # [win]
     - m2-bash       # [win]
     - m2-coreutils  # [win]
 
